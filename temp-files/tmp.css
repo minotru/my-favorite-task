@@ -1,0 +1,64 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Muli';
+}
+
+#signin-page{
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    height: 300px;
+}
+
+.signin-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 240px;
+    width: 300px;
+    align-self: center;
+}
+
+.input-enter{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 20px;
+    line-height: 20px;
+    height: 50px;
+    width: 200px;
+    align-self: center;
+}
+
+header{
+    height: 14vw;
+    flex-shrink: 0;
+}
+
+.remarkable-header{
+    height: 100%;
+    line-height: 100%;
+    font-size: 14vw;
+    text-align: center;
+}
+
+.button{
+    display: block;
+    background: whitesmoke;
+    font-family: inherit;
+    border: 1px solid lightgray;
+}
+
+.submit-signin-form-button{
+    width: 80px;
+    height: 40px;
+    font-size: 20px;
+    line-height: 100%;
+}
+
+#root{
+    display: flex;
+    flex-direction: column;
+}
