@@ -23,7 +23,7 @@ header{
     justify-content: center;
     width: 100vw;
     height: auto;
-    font-size: 1vmax;
+    font-size: 1.1vmax;
 }
 
 .sign-up-form,
@@ -35,13 +35,13 @@ header{
 }
 
 .sign-in-form{
-    height: 18vmax;
-    width: 22vmax;
+    height: 20vmax;
+    width: 24vmax;
 }
 
 .sign-up-form{
-    height: 22vmax;
-    width: 22vmax;
+    height: 24vmax;
+    width: 24vmax;
 }
 
 .input-enter{
@@ -100,15 +100,15 @@ footer{
     align-self: center;
     width: auto;
     height: 20%;
-    font-size: 1.2vmax;
-    line-height: 1.2vmax;
+    font-size: 1.4vmax;
+    line-height: 1.4vmax;
 }
 
 .sign-up-link{
     margin-left: 1vmax;
 }
 
-#root{
+#starting-page{
     height: 100vh;
     display: flex;
     flex-direction: column;

@@ -26,7 +26,7 @@ class Loginform extends React.Component {
     }
 
     check() {
-        if (this.props.type.toLowerCase().localeCompare('signup') === 0)
+        if (this.props.type.toLowerCase().localeCompare('sign up') === 0)
             return true;
         else return false;
     }
@@ -75,34 +75,56 @@ class SignTypeHeader extends React.Component {
     render() {
         return (
             <div className='signing-header'>
-                {this.props.name}
+                {this.props.text}
             </div>
         );
     }
 }
 
-class SignInPage extends React.Component {
+class SigningPage extends React.Component {
     render() {
         return (
             <div id='signing-page'>
-                <SignTypeHeader name='Sign in' />
-                <Loginform type='signin' />
+                <SignTypeHeader text={this.props.type} />
+                <Loginform type={this.props.type} />
             </div>
         );
     }
 }
 
-class SignUpPage extends React.Component {
+class RemarkableHeader extends React.Component {
     render() {
         return (
-            <div id='signing-page'>
-                <SignTypeHeader name='Sign up' />
-                <Loginform type='signup' />
+            <header>
+                <div class="remarkable-header">REMARKABLE</div>
+            </header>
+        );
+    }
+}
+
+class SignUpFooter extends React.Component {
+    render() {
+        return (
+            <footer>
+                <div class="sign-up-hint">
+                    <div>Don't have the Remarkable account yet?</div>
+                    <a class="sign-up-link" href="#"> Sign up</a>
+                </div>
+            </footer>
+        );
+    }
+}
+
+class StartingPage extends React.Component {
+    render() {
+        return (
+            <div id='starting-page'>
+                <RemarkableHeader />
+                <SigningPage type='Sign up' />
+                <SignUpFooter />
             </div>
         );
     }
 }
 
-
-
-ReactDOM.render(<SignUpPage />, document.getElementById('root'));
+ReactDOM.render(<StartingPage />, document.getElementById('root'));
