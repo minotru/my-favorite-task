@@ -21,18 +21,27 @@ header{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 100%;
+    width: 100vw;
     height: auto;
     font-size: 1vmax;
 }
 
+.sign-up-form,
 .sign-in-form{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    align-self: center;
+}
+
+.sign-in-form{
     height: 18vmax;
     width: 22vmax;
-    align-self: center;
+}
+
+.sign-up-form{
+    height: 22vmax;
+    width: 22vmax;
 }
 
 .input-enter{
@@ -41,7 +50,7 @@ header{
     justify-content: space-between;
     font-size: 1.4em;
     line-height: 1.4em;
-    height: 16%;
+    height: auto;
     width: 70%;
     align-self: center;
 }
@@ -56,7 +65,7 @@ header{
     line-height: 100%;
     font-size: 3em;
     text-align: center;
-    padding-bottom: 1%
+    padding-bottom: 1%;
 }
 
 .button{

@@ -21,7 +21,7 @@ header{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 100%;
+    width: 100vw;
     height: auto;
     font-size: 1vmax;
 }
@@ -41,7 +41,7 @@ header{
     justify-content: space-between;
     font-size: 1.4em;
     line-height: 1.4em;
-    height: 16%;
+    height: auto;
     width: 70%;
     align-self: center;
 }
@@ -90,7 +90,7 @@ footer{
     justify-content: space-around;
     align-self: center;
     width: auto;
-    height: 20%;
+    height: auto;
     font-size: 1.2vmax;
     line-height: 1.2vmax;
 }

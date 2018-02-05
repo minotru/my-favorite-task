@@ -20,9 +20,15 @@ class Forminput extends React.Component {
 class Loginform extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { login: '', password: '' };
+        this.state = this.check() ? { login: '', password: '', passwordCnfrm: '' } : { login: '', password: '' };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
+    }
+
+    check() {
+        if (this.props.type.toLowerCase().localeCompare('signup') === 0)
+            return true;
+        else return false;
     }
 
     handleChange(obj) {
@@ -34,24 +40,64 @@ class Loginform extends React.Component {
     }
 
     render() {
-        return (
-            <form className="sign-in-form" method="POST" onSubmit={this.handleSubmit}>
-                <Forminput text="Login" type="text" name="login" onChange={(l) => this.handleChange({ login: l, password: this.state.password })} />
-                <Forminput text="Password" type="password" name="password" onChange={(p) => this.handleChange({ login: this.state.login, password: p })} />
-                <div>Or through social networks [TODO]</div>
-                <div style={{ display: 'flex', justifyContent: 'center', background: 'linear-gradient(0deg, transparent 48%, lightgray 50%, transparent 52%)' }}>
-                    <input type="submit" className="submit-sign-in-form-button button" value="Submit" />
-                </div>
-            </form >
-        );
+        let renderForm;
+        if (this.check()) {
+            renderForm = (
+                <form className='sign-up-form' method='POST' onSubmit={this.handleSubmit}>
+                    <Forminput text='Login' type='text' name='login' onChange={(l) => this.handleChange({ login: l, password: this.state.password, passwordCnfrm: this.state.passwordCnfrm })} />
+                    <Forminput text='Password' type='password' name='password' onChange={(p) => this.handleChange({ login: this.state.login, password: p, passwordCnfrm: this.state.passwordCnfrm })} />
+                    <Forminput text='Confirm password' type='password' name='passwordCnfrm' onChange={(pc) => this.handleChange({ login: this.state.login, password: this.state.password, passwordCnfrm: pc })} />
+                    <div>Or through social networks [TODO]</div>
+                    <div style={{ display: 'flex', justifyContent: 'center', background: 'linear-gradient(0deg, transparent 48%, lightgray 50%, transparent 52%)' }}>
+                        <input type='submit' className='submit-sign-in-form-button button' value='Submit' />
+                    </div>
+                </form >
+            );
+        } else {
+            renderForm = (
+                <form className='sign-in-form' method='POST' onSubmit={this.handleSubmit}>
+                    <Forminput text='Login' type='text' name='login' onChange={(l) => this.handleChange({ login: l, password: this.state.password })} />
+                    <Forminput text='Password' type='password' name='password' onChange={(p) => this.handleChange({ login: this.state.login, password: p })} />
+                    <div>Or through social networks [TODO]</div>
+                    <div style={{ display: 'flex', justifyContent: 'center', background: 'linear-gradient(0deg, transparent 48%, lightgray 50%, transparent 52%)' }}>
+                        <input type='submit' className='submit-sign-in-form-button button' value='Submit' />
+                    </div>
+                </form >
+            );
+        }
+        return renderForm;
     }
 }
+
+
 
 class SignTypeHeader extends React.Component {
     render() {
         return (
-            <div className="signing-header">
+            <div className='signing-header'>
                 {this.props.name}
+            </div>
+        );
+    }
+}
+
+class SignInPage extends React.Component {
+    render() {
+        return (
+            <div id='signing-page'>
+                <SignTypeHeader name='Sign in' />
+                <Loginform type='signin' />
+            </div>
+        );
+    }
+}
+
+class SignUpPage extends React.Component {
+    render() {
+        return (
+            <div id='signing-page'>
+                <SignTypeHeader name='Sign up' />
+                <Loginform type='signup' />
             </div>
         );
     }
@@ -59,6 +105,4 @@ class SignTypeHeader extends React.Component {
 
 
 
-
-
-ReactDOM.render(<Loginform />, document.getElementById('root'));
+ReactDOM.render(<SignUpPage />, document.getElementById('root'));
