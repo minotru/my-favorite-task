@@ -5,19 +5,33 @@ body {
     font-family: 'Muli';
 }
 
-#signin-page{
-    display: flex;
-    justify-content: center;
-    width: 100vw;
-    height: 300px;
+header{
+    height: 14vmax;
+    flex-shrink: 0;
 }
 
-.signin-form{
+.remarkable-header{
+    height: auto;
+    line-height: 100%;
+    font-size: 14vw;
+    text-align: center;
+}
+
+#sign-in-page{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    font-size: 1vmax;
+}
+
+.sign-in-form{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    height: 240px;
-    width: 300px;
+    height: 18vmax;
+    width: 22vmax;
     align-self: center;
 }
 
@@ -25,40 +39,69 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    font-size: 20px;
-    line-height: 20px;
-    height: 50px;
-    width: 200px;
+    font-size: 1.4em;
+    line-height: 1.4em;
+    height: 16%;
+    width: 70%;
     align-self: center;
 }
 
-header{
-    height: 14vw;
-    flex-shrink: 0;
+.input-enter input{
+    font-size: 0.7em;
+    line-height: 1em;
 }
 
-.remarkable-header{
-    height: 100%;
+.sign-in-header{
+    height: auto;
     line-height: 100%;
-    font-size: 14vw;
+    font-size: 3em;
     text-align: center;
+    padding-bottom: 1%
 }
 
 .button{
+    box-shadow: 0px 3px 5px lightgray;
     display: block;
     background: whitesmoke;
     font-family: inherit;
     border: 1px solid lightgray;
+    outline: none;
 }
 
-.submit-signin-form-button{
-    width: 80px;
-    height: 40px;
-    font-size: 20px;
-    line-height: 100%;
+.button:active{
+    box-shadow: 0px 0px 1px lightgray;
+}
+
+.submit-sign-in-form-button{
+    width: 35%;
+    font-size: 1.4em;
+    line-height: 1.4em;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    height: 10vmax;
+    
+}
+
+.sign-up-hint{
+    display: flex;
+    justify-content: space-around;
+    align-self: center;
+    width: auto;
+    height: 20%;
+    font-size: 1.2vmax;
+    line-height: 1.2vmax;
+}
+
+.sign-up-link{
+    margin-left: 1vmax;
 }
 
 #root{
+    height: 100vh;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 }
