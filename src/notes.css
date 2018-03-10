@@ -19,13 +19,11 @@
 
 #notes-remarkable-header h1 {
   line-height: 100%;
-  font-size: 8em;
+  font-size: 6vmax;
 }
 
 .notes-header-user {
   display: flex;
-  height: auto;
-  width: 200px;
   box-sizing: border-box;
   flex-direction: column;
   align-items: center;
@@ -34,72 +32,42 @@
 
 .notes-header-user h3 {
   box-sizing: border-box;
-  font-size: 2.6em;
+  font-size: 2.2vmax;
 }
 
 .notes-logout {
-  height: 38px;
-  width: 120px;
+  padding: 0.1vmax 1vmax;
   text-align: center;
-  font-size: 1.6em;
-}
-
-@media all and (max-width: 1100px) {
-  #notes-remarkable-header h1 {
-    font-size: 4.5em;
-  }
-
-  .notes-header-user h3 {
-    font-size: 2em;
-  }
-
-  .notes-logout {
-    text-align: center;
-    font-size: 1.2em;
-    height: 26px;
-    width: 100px;
-  }
-}
-
-@media all and (max-width: 700px) {
-  #notes-remarkable-header {
-    min-height: 150px;
-    flex-direction: column;
-  }
-
-  .notes-header-user {
-    width: 60%;
-    flex-direction: row;
-  }
+  font-size: 1.5vmax;
 }
 
 @media all and (max-width: 500px) {
   #notes-remarkable-header {
-    min-height: 120px;
     flex-direction: column;
   }
 
-  #notes-remarkable-header h1 {
-    font-size: 3em;
+  .notes-header-user {
+    padding-top: 1.8vmax;
+    width: 60%;
+    flex-direction: row;
+    align-items: center;
   }
 
   .notes-header-user h3 {
-    font-size: 1.2em;
+    font-size: 2.6vmax;
   }
 
   .notes-logout {
-    text-align: center;
-    font-size: 1em;
-    height: 20px;
-    width: 80px;
+    font-size: 2vmax;
   }
 }
 
 #notes-main {
+  display: flex;
   height: 100%;
   width: 100%;
-  box-sizing: border-box;
   flex-direction: row;
-  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
   overflow-y: scroll;
 }
