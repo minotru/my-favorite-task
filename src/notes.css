@@ -1,0 +1,105 @@
+#notes-page {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#notes-remarkable-header {
+  display: flex;
+  height: auto;
+  width: 100%;
+  box-sizing: border-box;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 2px solid lightgray;
+}
+
+#notes-remarkable-header h1 {
+  line-height: 100%;
+  font-size: 8em;
+}
+
+.notes-header-user {
+  display: flex;
+  height: auto;
+  width: 200px;
+  box-sizing: border-box;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.notes-header-user h3 {
+  box-sizing: border-box;
+  font-size: 2.6em;
+}
+
+.notes-logout {
+  height: 38px;
+  width: 120px;
+  text-align: center;
+  font-size: 1.6em;
+}
+
+@media all and (max-width: 1100px) {
+  #notes-remarkable-header h1 {
+    font-size: 4.5em;
+  }
+
+  .notes-header-user h3 {
+    font-size: 2em;
+  }
+
+  .notes-logout {
+    text-align: center;
+    font-size: 1.2em;
+    height: 26px;
+    width: 100px;
+  }
+}
+
+@media all and (max-width: 700px) {
+  #notes-remarkable-header {
+    min-height: 150px;
+    flex-direction: column;
+  }
+
+  .notes-header-user {
+    width: 60%;
+    flex-direction: row;
+  }
+}
+
+@media all and (max-width: 500px) {
+  #notes-remarkable-header {
+    min-height: 120px;
+    flex-direction: column;
+  }
+
+  #notes-remarkable-header h1 {
+    font-size: 3em;
+  }
+
+  .notes-header-user h3 {
+    font-size: 1.2em;
+  }
+
+  .notes-logout {
+    text-align: center;
+    font-size: 1em;
+    height: 20px;
+    width: 80px;
+  }
+}
+
+#notes-main {
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  flex-direction: row;
+  align-items: center;
+  overflow-y: scroll;
+}

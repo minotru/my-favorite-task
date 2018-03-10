@@ -1,116 +1,125 @@
-html,
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Muli';
+  font-family: "Open Sans";
 }
 
-header{
-    height: 14vmax;
-    flex-shrink: 0;
+h1,
+h2,
+h3 {
+  font-family: "Muli";
+  font-weight: lighter;
 }
 
-.remarkable-header{
-    height: auto;
-    line-height: 100%;
-    font-size: 14vw;
-    text-align: center;
+header {
+  height: 14vmax;
+  flex-shrink: 0;
 }
 
-#signing-page{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100vw;
-    height: auto;
-    font-size: 1.1vmax;
+.remarkable-header {
+  height: auto;
+  line-height: 100%;
+  font-size: 14vw;
+  text-align: center;
+}
+
+#signing-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100vw;
+  height: auto;
+  font-size: 1.1vmax;
 }
 
 .sign-up-form,
-.sign-in-form{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-self: center;
+.sign-in-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-self: center;
 }
 
-.sign-in-form{
-    height: 20vmax;
-    width: 24vmax;
+.sign-in-form {
+  height: 20vmax;
+  width: 24vmax;
 }
 
-.sign-up-form{
-    height: 24vmax;
-    width: 24vmax;
+.sign-up-form {
+  height: 24vmax;
+  width: 24vmax;
 }
 
-.input-enter{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    font-size: 1.4em;
-    line-height: 1.4em;
-    height: auto;
-    width: 70%;
-    align-self: center;
+.input-enter {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 1.4em;
+  line-height: 1.4em;
+  height: auto;
+  width: 70%;
+  align-self: center;
 }
 
-.input-enter input{
-    font-size: 0.7em;
-    line-height: 1em;
+.input-enter input {
+  font-size: 0.7em;
+  line-height: 1em;
 }
 
-.signing-header{
-    height: auto;
-    line-height: 100%;
-    font-size: 3em;
-    text-align: center;
-    padding-bottom: 1%;
+.signing-header {
+  height: auto;
+  line-height: 100%;
+  font-size: 3em;
+  text-align: center;
+  padding-bottom: 1%;
 }
 
-.button{
-    box-shadow: 0px 3px 5px lightgray;
-    display: block;
-    background: whitesmoke;
-    font-family: inherit;
-    border: 1px solid lightgray;
-    outline: none;
+.button {
+  display: block;
+  box-shadow: 0px 3px 5px lightgray;
+  background: whitesmoke;
+  font-family: "Muli";
+  border: 1px solid lightgray;
+  outline: none;
+  user-select: none;
 }
 
-.button:active{
-    box-shadow: 0px 0px 1px lightgray;
+.button:active {
+  box-shadow: 0px 0px 1px lightgray;
 }
 
-.submit-sign-in-form-button{
-    width: 35%;
-    font-size: 1.4em;
-    line-height: 1.4em;
+.submit-sign-in-form-button {
+  width: 35%;
+  font-size: 1.4em;
+  line-height: 1.4em;
 }
 
-footer{
-    display: flex;
-    justify-content: center;
-    height: 10vmax;
-    
+footer {
+  display: flex;
+  justify-content: center;
+  height: 10vmax;
 }
 
-.sign-up-hint{
-    display: flex;
-    justify-content: space-around;
-    align-self: center;
-    width: auto;
-    height: 20%;
-    font-size: 1.4vmax;
-    line-height: 1.4vmax;
+.sign-up-hint {
+  display: flex;
+  justify-content: space-around;
+  align-self: center;
+  width: auto;
+  height: 20%;
+  font-size: 1.4vmax;
+  line-height: 1.4vmax;
 }
 
-.sign-up-link{
-    margin-left: 1vmax;
+.sign-up-link {
+  margin-left: 1vmax;
 }
 
-#starting-page{
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+#starting-page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
