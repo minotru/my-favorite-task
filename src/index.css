@@ -15,7 +15,6 @@ h3 {
 }
 
 header {
-  height: 14vmax;
   flex-shrink: 0;
 }
 
@@ -30,51 +29,61 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  flex-shrink: 0;
   width: 100vw;
   height: auto;
   font-size: 1.1vmax;
+}
+
+.signing-header {
+  height: auto;
+  line-height: 100%;
+  font-family: "Muli";
+  font-size: 3vw;
+  text-align: center;
+  padding-bottom: 1vh;
 }
 
 .sign-up-form,
 .sign-in-form {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   align-self: center;
 }
 
 .sign-in-form {
-  height: 20vmax;
-  width: 24vmax;
+  height: 20vw;
+  width: 28vw;
 }
 
 .sign-up-form {
-  height: 24vmax;
-  width: 24vmax;
+  height: 24vw;
+  width: 28vw;
 }
 
 .input-enter {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  font-size: 1.4em;
-  line-height: 1.4em;
+  box-sizing: border-box;
+  font-family: "Muli";
   height: auto;
   width: 70%;
   align-self: center;
 }
 
-.input-enter input {
-  font-size: 0.7em;
-  line-height: 1em;
+.input-enter h3 {
+  font-size: 1.8vw;
+  line-height: 1.8vw;
+  padding-bottom: 0.5vw;
 }
 
-.signing-header {
-  height: auto;
-  line-height: 100%;
-  font-size: 3em;
-  text-align: center;
-  padding-bottom: 1%;
+.input-enter input {
+  font-family: "Open Sans";
+  padding: 0.2vw;
+  font-size: 1.5vw;
+  line-height: 1.5vw;
 }
 
 .button {
@@ -91,26 +100,29 @@ header {
   box-shadow: 0px 0px 1px lightgray;
 }
 
-.submit-sign-in-form-button {
-  width: 35%;
-  font-size: 1.4em;
-  line-height: 1.4em;
+.submit-signing-form-button {
+  width: 45%;
+  height: 3vw;
+  font-size: 2vw;
+  line-height: 2vw;
 }
 
 footer {
   display: flex;
   justify-content: center;
-  height: 10vmax;
+  align-items: center;
+  flex-shrink: 0;
+  height: 10vh;
 }
 
 .sign-up-hint {
   display: flex;
+  font-family: "Muli";
   justify-content: space-around;
-  align-self: center;
   width: auto;
-  height: 20%;
-  font-size: 1.4vmax;
-  line-height: 1.4vmax;
+  height: 60%;
+  font-size: 2.4vw;
+  line-height: 2.4vw;
 }
 
 .sign-up-link {
@@ -122,4 +134,53 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+@media all and (max-width: 150vh) {
+  .signing-header {
+    font-size: 5vh;
+  }
+
+  .sign-in-form,
+  .sign-up-form {
+    justify-content: space-around;
+  }
+
+  .sign-in-form {
+    height: 40vh;
+    width: 48vh;
+  }
+
+  .sign-up-form {
+    height: 48vh;
+    width: 48vh;
+  }
+
+  .input-enter h3 {
+    font-size: 3.2vh;
+    line-height: 3.6vh;
+  }
+
+  .input-enter input {
+    padding: 0.8vh;
+    font-size: 2.6vh;
+    line-height: 2.6vh;
+  }
+
+  .submit-signing-form-button {
+    height: 5vh;
+    font-size: 3vh;
+    line-height: 3vh;
+  }
+
+  footer {
+    height: 20vw;
+  }
+
+  .sign-up-hint {
+    height: 80%;
+    font-size: 5vw;
+    flex-direction: column;
+    align-items: center;
+  }
 }
