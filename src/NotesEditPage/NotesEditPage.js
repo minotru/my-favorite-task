@@ -7,24 +7,31 @@ class NotesEditPage extends React.Component {
   constructor() {
     super();
     this.username = 'Simon';
+    this.title = '';
     this.content = '';
     this.saveNote = this.saveNote.bind(this);
     this.backToMenu = this.backToMenu.bind(this);
+    this.handleTitleChange = this.handleTitleChange.bind(this);
     this.handleEditorChange = this.handleEditorChange.bind(this);
   }
 
-  backToMenu() {
+  backToMenu(e) {
+    e.preventDefault();
     console.log('back');
+  }
+
+  saveNote(e) {
+    e.preventDefault();
+    console.log(this.title);
+    console.log(this.content);
   }
 
   handleEditorChange(e) {
     this.content = e.target.getContent();
   }
 
-  saveNote(e) {
-    e.preventDefault();
-    console.log(this.content);
-    console.log('save me pls');
+  handleTitleChange(e) {
+    this.title = e.target.value;
   }
 
   render() {
@@ -39,7 +46,12 @@ class NotesEditPage extends React.Component {
         </div>
         <form id="notes-edit-main" method="post" onSubmit={this.saveNote}>
           <div id="working-area">
-            <input type="text" name="title" placeholder="Header" />
+            <input
+              type="text"
+              name="title"
+              placeholder="Header"
+              onChange={this.handleTitleChange}
+            />
             <Editor
               init={{
                 plugins: 'link image code',
