@@ -1,0 +1,48 @@
+#notes-edit-page {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#notes-edit-main {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#working-area {
+  display: flex;
+  height: 80vh;
+  width: 60vw;
+  background: lightgray;
+  flex-direction: column;
+  align-items: center;
+}
+
+#working-area input {
+  box-sizing: border-box;
+  padding: 0.2em;
+  font-family: "Muli";
+  font-size: 3em;
+  text-align: center;
+  width: 60%;
+}
+
+.notes-edit-main-button-bar {
+  display: flex;
+  height: 30%;
+  width: auto;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.notes-edit-back,
+.notes-edit-save {
+  height: 3vw;
+  font-size: 2vw;
+  padding: 0 1vw;
+}

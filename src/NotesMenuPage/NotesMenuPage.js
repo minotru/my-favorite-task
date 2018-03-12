@@ -1,25 +1,6 @@
 import React from 'react';
 import '../notes.css';
-import '../note-small.css';
-
-let main = null;
-
-window.onresize = function () {
-  const amount = Math.floor(window.innerWidth / 350);
-  main.querySelectorAll('.invisible').forEach((element) => {
-    main.removeChild(element);
-  });
-  const size = main.childNodes.length;
-  if (size % amount !== 0) {
-    for (let i = 0; i <= amount - Math.floor(size % amount); i++) {
-      const emptynote = document.createElement('div');
-      emptynote.classList.add('note-small', 'invisible');
-      main.appendChild(emptynote);
-    }
-  }
-};
-
-window.onload = window.onresize;
+import './note-small.css';
 
 class NotesMenuPage extends React.Component {
   constructor() {
@@ -29,7 +10,19 @@ class NotesMenuPage extends React.Component {
   }
 
   componentDidMount() {
-    main = document.querySelector('#notes-main');
+    const main = document.querySelector('#notes-main');
+    const amount = Math.floor(window.innerWidth / 350);
+    main.querySelectorAll('.invisible').forEach((element) => {
+      main.removeChild(element);
+    });
+    const size = main.childNodes.length;
+    if (size % amount !== 0) {
+      for (let i = 0; i <= amount - Math.floor(size % amount); i++) {
+        const emptynote = document.createElement('div');
+        emptynote.classList.add('note-small', 'invisible');
+        main.appendChild(emptynote);
+      }
+    }
   }
 
   addNewNote() {
