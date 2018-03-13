@@ -61,12 +61,7 @@ class NotesMenuPage extends React.Component {
               </button>
             </div>
             <div className="fade">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore
-                aspernatur totam in maiores consequuntur laudantium suscipit
-                impedit. Quod hic at, facilis temporibus sint quia qui, ipsum
-                aliquam sapiente obcaecati expedita.
-              </p>
+              <p>{window.something.text}</p>
             </div>
             <div className="note-info-bar">
               <h4>12.09.91</h4>

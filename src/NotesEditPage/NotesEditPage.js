@@ -1,5 +1,7 @@
 import React from 'react';
-import { Editor } from '@tinymce/tinymce-react';
+// import { Editor } from '@tinymce/tinymce-react';
+import RichEditor from './RichEditor';
+import { EditorState, convertFromRaw, convertToRaw, RichUtils } from 'draft-js';
 import '../notes.css';
 import './notes-edit.css';
 
@@ -7,8 +9,6 @@ class NotesEditPage extends React.Component {
   constructor() {
     super();
     this.user = { login: 'Simon' };
-    this.title = '';
-    this.content = '';
     this.saveNote = this.saveNote.bind(this);
     this.backToMenu = this.backToMenu.bind(this);
     this.handleTitleChange = this.handleTitleChange.bind(this);
@@ -22,16 +22,15 @@ class NotesEditPage extends React.Component {
 
   saveNote(e) {
     e.preventDefault();
-    console.log(this.title);
-    console.log(this.content);
   }
 
-  handleEditorChange(e) {
-    this.content = e.target.getContent();
+  handleEditorChange(content) {
+    window.something.text = content.getPlainText();
+    window.something.content = convertToRaw(content);
   }
 
   handleTitleChange(e) {
-    this.title = e.target.value;
+    window.something.title = e.target.value;
   }
 
   render() {
@@ -53,21 +52,7 @@ class NotesEditPage extends React.Component {
               placeholder="Header"
               onChange={this.handleTitleChange}
             />
-            <Editor
-              init={{
-                plugins: 'link image code',
-                toolbar:
-                  'undo redo | bold italic | alignleft aligncenter alignright | code',
-                branding: false,
-                theme: 'modern',
-                resize: true,
-                height: '50vh',
-                mobile: {
-                  theme: 'mobile',
-                },
-              }}
-              onChange={this.handleEditorChange}
-            />
+            <RichEditor handleChange={this.handleEditorChange} />
           </div>
           <div className="notes-edit-main-button-bar">
             <input

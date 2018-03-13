@@ -12,6 +12,8 @@
     "func-names": "off",
     "no-multi-assign": "off",
     "no-console": "off",
-    "class-methods-use-this": "off"
+    "class-methods-use-this": "off",
+    "no-underscore-dangle": "off",
+    "prop-types": "off"
   }
 }

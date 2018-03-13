@@ -6,4 +6,10 @@ import NotesMenuPage from './NotesMenuPage/NotesMenuPage';
 import NotesEditPage from './NotesEditPage/NotesEditPage';
 import './index.css';
 
+window.something = {
+  title: '',
+  content: {},
+  text: '',
+};
+
 ReactDOM.render(<NotesEditPage />, document.querySelector('#root'));
