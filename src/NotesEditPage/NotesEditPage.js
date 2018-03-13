@@ -6,7 +6,7 @@ import './notes-edit.css';
 class NotesEditPage extends React.Component {
   constructor() {
     super();
-    this.username = 'Simon';
+    this.user = { login: 'Simon' };
     this.title = '';
     this.content = '';
     this.saveNote = this.saveNote.bind(this);
@@ -35,12 +35,13 @@ class NotesEditPage extends React.Component {
   }
 
   render() {
+    const { login } = this.user;
     return (
       <main id="notes-edit-page">
         <div id="notes-remarkable-header">
           <h1>REMARKABLE</h1>
           <div className="notes-header-user">
-            <h3>Welcome, {this.username}</h3>
+            <h3>Welcome, {login}</h3>
             <div className="notes-logout button">Log out</div>
           </div>
         </div>
