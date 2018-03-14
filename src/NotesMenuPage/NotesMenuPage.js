@@ -1,12 +1,15 @@
 import React from 'react';
 import '../notes.css';
 import './note-small.css';
+import Note from './Note';
 
 class NotesMenuPage extends React.Component {
-  constructor() {
+  constructor({ notes, user, onLogout, onAddNewNote }) {
     super();
-    this.user = { login: 'Simon' };
-    this.addNewNote = this.addNewNote.bind(this);
+    this.user = user;
+    this.notes = notes;
+    this.onLogout = onLogout;
+    this.onAddNewNote = onAddNewNote;
     this.fillWithEmptyElements = this.fillWithEmptyElements.bind(this);
   }
 
@@ -34,44 +37,22 @@ class NotesMenuPage extends React.Component {
     }
   }
 
-  addNewNote() {
-    console.log(`彡ﾟ◉ω◉ )つー☆ﾟ.*･｡ﾟ neW POst bY ${this.user.login} ･.*｡`);
-  }
-
   render() {
-    const { login } = this.user;
     return (
       <main id="notes-page">
         <div id="notes-remarkable-header">
           <h1>REMARKABLE</h1>
           <div className="notes-header-user">
-            <h3>Welcome, {login}</h3>
-            <div className="notes-logout button">Log out</div>
+            <h3>Welcome, {this.user.login}</h3>
+            <div className="notes-logout button" onClick={this.onLogout}>Log out</div>
           </div>
         </div>
         <div id="notes-main">
-          <div className="note-small">
-            <div className="note-header">
-              <h3>My favorite task</h3>
-              <button className="button">
-                <i className="fas fa-pencil-alt" />
-              </button>
-              <button className="button">
-                <i className="fas fa-trash-alt" />
-              </button>
-            </div>
-            <div className="fade">
-              <p>{window.something.text}</p>
-            </div>
-            <div className="note-info-bar">
-              <h4>12.09.91</h4>
-              <h4>#important #notfun</h4>
-            </div>
-          </div>
+          {this.notes.map(note => <Note {...note} key={note.id} />)}
           <div className="note-small">
             <button
               className="notes-add-note-button button"
-              onClick={this.addNewNote}
+              onClick={this.onAddNewNote}
             >
               <i className="fas fa-plus" />
             </button>
